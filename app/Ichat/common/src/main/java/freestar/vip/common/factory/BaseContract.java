@@ -34,7 +34,7 @@ public interface BaseContract {
     }
 
     // 基本的一个列表的 view 的职责
-    interface RecyclerView<T extends Presenter, ViewMode> extends BaseView<T> {
+    interface BaseRecyclerView<T extends Presenter, ViewMode> extends BaseView<T> {
         // 界面端只能刷新整个数据集合，不能精确到每一条数据更新
         // void onDone(List<User user>);
 

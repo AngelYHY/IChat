@@ -40,5 +40,7 @@ dependencies {
 
     compile "net.qiujuer.genius:kit-handler:$rootProject.ext.geniusVersion"
 
+    compile project(':lang')
+
     testCompile 'junit:junit:4.12'
 }
