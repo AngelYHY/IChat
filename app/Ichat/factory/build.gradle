@@ -1,12 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
-
     compileSdkVersion rootProject.setup.compileSdk
     buildToolsVersion rootProject.setup.buildTools
 
+
     defaultConfig {
-        applicationId "freestar.ichat"
 
         minSdkVersion rootProject.setup.minSdk
         targetSdkVersion rootProject.setup.targetSdk
@@ -14,6 +13,7 @@ android {
         versionName rootProject.setup.vname
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -29,14 +29,12 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile project(':factory')
+    compile project(':common')
 
-
-    compile "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
-    compile "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
-
-    // 个推
-    compile "com.getui:sdk:$rootProject.ext.getuiVersion"
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${rootProject.ext.dbflowVersion}"
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:${rootProject.ext.dbflowVersion}"
+    compile "com.github.Raizlabs.DBFlow:dbflow:${rootProject.ext.dbflowVersion}"
 
     testCompile 'junit:junit:4.12'
+
 }

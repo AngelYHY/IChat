@@ -1,4 +1,4 @@
-package freestar.vip.common.factory;
+package freestar.vip.common.factory.presenter;
 
 import android.support.annotation.StringRes;
 

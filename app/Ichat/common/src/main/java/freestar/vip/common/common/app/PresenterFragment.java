@@ -3,7 +3,7 @@ package freestar.vip.common.common.app;
 import android.content.Context;
 import android.support.annotation.StringRes;
 
-import freestar.vip.common.factory.BaseContract;
+import freestar.vip.common.factory.presenter.BaseContract;
 
 /**
  * 描述：

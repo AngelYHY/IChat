@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import android.support.annotation.StringRes;
 
 import freestar.vip.common.R;
-import freestar.vip.common.factory.BaseContract;
+import freestar.vip.common.factory.presenter.BaseContract;
 
 /**
  * 描述：
@@ -69,7 +69,7 @@ public abstract class PresenterToolbarActivity<Presenter extends BaseContract.Pr
                 });
                 mLoadingDialog = dialog;
             }
-            dialog.setMessage(R.string.l);
+            dialog.setMessage(getText(R.string.prompt_loading));
             dialog.show();
         }
     }
@@ -79,6 +79,18 @@ public abstract class PresenterToolbarActivity<Presenter extends BaseContract.Pr
         if (dialog != null) {
             mLoadingDialog = null;
             dialog.dismiss();
+        }
+    }
+
+    /**
+     * 加载成功
+     */
+    protected void hideLoading() {
+        // 不管你怎么样，我先隐藏我
+        hideDialogLoading();
+
+        if (mPlaceHolderView != null) {
+            mPlaceHolderView.triggerLoadOk();
         }
     }
 

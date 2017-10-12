@@ -78,7 +78,7 @@ public class BaseApplication extends Application {
         showAccountView(this);
     }
 
-    private void showAccountView(Context context) {
+    protected void showAccountView(Context context) {
 
     }
 
@@ -87,7 +87,7 @@ public class BaseApplication extends Application {
      *
      * @return Application
      */
-    public static Application getInstance() {
+    public static BaseApplication getInstance() {
         return instance;
     }
 
